@@ -1,0 +1,88 @@
+h1 h2 {
+  margin-left: 50px;
+}
+
+/* --ФОНЫ-- */
+.bg {
+  width: 800px;
+  height: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 5px dashed rgba(0, 0, 0, 0.4);
+  color: maroon;
+  background-image: url(../img/lesson7-mar-caribe-min.jpg);
+  background-repeat: no-repeat;
+  /* не повторять изображение. по умолчанию повторяет */
+  background-position: center;
+  /* центрует по X Y */
+  /* background-position: top right; */
+  /* разместит изображение сверху справа */
+  /* background-position: top 20px right 30px; */
+  /* сверху справа и отступит указанное значение */
+  /* background-position: top 10% right 30%; */
+  /* отступит в % значении */
+  /* background-position: top -20px right -30px; */
+  /* отступит с выходом за грани рабочей области */
+  /* background-size: 200px; */
+  /* изменяет ширину, высота уменьшится пропорционально */
+  /* background-size: 200px 200px; */
+  /* изменяет ширину и высоту нарушая пропорции */
+  /* background-size: 50% 100%; */
+  /* изменяет ширину и высоту нарушая пропорции в % */
+  /* background-size: calc(50%-100px); */
+  /* работает с формулами калькуляции */
+  /* background-size: auto; */
+  /* автоматический размер */
+  /* background-size: contain; */
+  /* заполняет фон, пока не упрется в одну из рамок */
+  /* background-size: cover; */
+  /* изображение будет растянуто пока не заполнит всю область */
+}
+
+/* --НАЛОЖЕНИЕ ФОНОВ-- */
+.minecraft {
+  height: 600px;
+  outline: 3px solid orange;
+  background-image: url(../img/minecraft-1.png), url(../img/minecraft-2.png),
+    url(../img/minecraft-3.png), url(../img/minecraft-bcg.jpg);
+  /* изображение написанное первым - самое верхнее */
+  background-repeat: no-repeat;
+  /* background-repeat: no-repeat, repeat, repeat-x, repeat-y; */
+  /* если прописывать по порядку повторение */
+  background-position: bottom 50px left 450px, bottom 50px left 650px, bottom 50px right 850px,
+    center;
+  background-size: 230px, 250px, 80px, auto;
+}
+
+/* --ГРАДИЕНТ-- */
+.container {
+  width: 600px;
+  height: 300px;
+  margin: 0 auto;
+}
+.linear {
+  /* background-image: linear-gradient(blue, yellow); */
+  /* равномерный переход градиента */
+  /* background-image: linear-gradient(to bottom right, blue 0 20%, yellow 55% 100%); */
+  /* меняет направление смены цвета и устанавливает диапазон насыщенности цвета, от и до в %*/
+  background-image: linear-gradient(blue 0% 33%, yellow 33% 66%, green 66% 100%);
+  /* четкое указание % на которых меняется цвет */
+  /* !!! значения можно указывать и в px и в других значениях */
+}
+
+.radial {
+  /* background-image: radial-gradient(blue, red, yellow); */
+  /* background-image: radial-gradient(ellipse at top, blue, red, yellow); */
+  /* смена цветов элипсом в верх раб области  */
+  /* background-image: radial-gradient(ellipse at center, blue, red, yellow); */
+  /* смена цветов элипсов в центр рабочей области  */
+  /* background-image: radial-gradient(circle at center, red 0 20%, green 30% 50%, yellow 80% 100%); */
+  /* смена цветов кругом в центр рабочей области с указанием областей заливки и размытия */
+  background-image: radial-gradient(
+    circle at center,
+    transparent 0 20%,
+    green 30% 50%,
+    yellow 80% 100%
+  );
+  /* transparent сделает прозрачность */
+}
