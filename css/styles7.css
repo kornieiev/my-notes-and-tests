@@ -86,3 +86,120 @@ h1 h2 {
   );
   /* transparent сделает прозрачность */
 }
+
+/* --ТЕНИ-- */
+.shadow-box {
+  width: 400px;
+  height: 400px;
+  padding: 20px;
+  background-color: orange;
+  margin: 50px auto;
+  color: transparent;
+  margin-bottom: 4px;
+  /* box-shadow: 10px 10px 10px 10px rgba(0, 0, 200, 0.5); */
+  /* первое значение параметр оси x, второе - ось y, третье - размытие тени (размывает во все стороны), четвертое - спред (распространение тени), при rgba можно ставить прозрачность тени*/
+
+  /* box-shadow: -10px -10px 0 0 blue; */
+  /* смещение по оси с минусовым значением от x y */
+
+  /* box-shadow: 500px 0px 0 0 blue; */
+  /* смещая по осям можно делать копию элемента */
+
+  /* border-radius: 50%; */
+  /* добавив свойство border-radius можно установить закругленность вплоть до круга */
+
+  /* box-shadow: inset 10px 10px 10px 0px blue; */
+  /* добавив параметр inset тень входит вовнутрь */
+
+  /* box-shadow: 10px 10px 5px 5px blue, 20px 20px 5px 5px green, 30px 30px 5px 5px brown, 40px 40px 5px 5px yellow; */
+  /* можно добавлять несколько последовательных теней */
+
+  box-shadow: 10px 10px 5px 5px blue;
+}
+
+/* --КНОПКА С ЭФФЕКТОМ ТЕНИ-- */
+.shadow-btn {
+  width: 200px;
+  height: 100px;
+  padding: 20px;
+  background-color: blue;
+  margin: 50px auto;
+  color: transparent;
+  margin-bottom: 4px;
+  box-shadow: 5px 5px 5px 0px yellow;
+  transition: transform 300ms, box-shadow 300ms;
+  /* transition добавляет анимацию смещения */
+  /* можно погуглить "ховер эффект с тенью" */
+  /* Box-shadov generator */
+}
+.shadow-btn:hover {
+  box-shadow: unset;
+  /* эффект исчезания тени */
+  transform: translate(5px, 5px);
+}
+
+/* -- ПСЕВДОЭЛЕМЕНТЫ BEFORE AFTER-- */
+/* может использоваться с любым типом контента (текст, див и тд) */
+/* записываются через двк двекрапки :: */
+/* before - перед элементом, after - после элемента */
+
+.pseudo-element {
+  padding: 20px;
+  background-color: grey;
+  margin: 100px;
+}
+.pseudo-element::before {
+  content: 'ОПАЧА ';
+  /* без свойства "content" псевдоэлемент не будет создан */
+  color: red;
+}
+.pseudo-element:hover::before {
+  color: greenyellow;
+}
+.pseudo-element::after {
+  content: 'ТА ВАЩЕ! ';
+  /* без свойства "content" псевдоэлемент не будет создан */
+  color: red;
+}
+.pseudo-element:hover::after {
+  color: brown;
+}
+/* теперь ховер работает даже при наведении на материнский элемент */
+
+.pseudo-element-box {
+  margin: 20px 100px;
+  font-size: 30px;
+  color: green;
+  display: flex;
+  /* align-items: baseline; */
+  /* выравнивает по нижнему краю */
+  align-items: center;
+  /* выравнивает по центру */
+}
+
+.pseudo-element-box::before {
+  content: '';
+  width: 100px;
+  height: 20px;
+  margin-right: 100px;
+  /* background-color: coral; */
+  background-color: currentColor;
+  /* наслідує колір батьківського елементу. в данном случае - цвет текста*/
+  border: 2px solid black;
+  /* display: block; */
+  /* display-block элементы становятся автоматически блочными, если использовано display-flex. display-block нужно только на этапе пока нет  display-flex*/
+}
+.pseudo-element-box::after {
+  content: '';
+  /* width: 150px; */
+  flex-grow: 1;
+  /* заполнит все свободное пространство по длине элемента */
+  height: 10px;
+  margin-left: 100px;
+  background-color: rgb(43, 255, 0);
+  border: 1px solid rgb(55, 0, 255);
+}
+.pseudo-element-box:hover::after {
+  background-color: rgb(55, 0, 255);
+  border: 1px solid rgb(43, 255, 0);
+}
