@@ -117,7 +117,7 @@
   height: 80px;
 }
 
-/* -- POSITION: FIXED TITLE -- */
+/* -- POSITION: STICKY -- */
 div {
   display: block;
 }
@@ -125,14 +125,60 @@ div {
   width: 700px;
   margin: 0 auto;
   outline: 1px solid teal;
-  height: 360px;
+  height: 600px;
   position: relative;
 }
 .title {
   position: sticky;
   top: 10px;
+  /* якщо задати значення buttom і перенести в html тег з класом title, то приліпання буде знизу*/
   background-color: teal;
 }
 .title-new {
   background-color: purple;
 }
+
+/* -- POSITION: ABSOLUTE -- */
+
+.wrapper-z {
+  font-size: 30px;
+}
+.container-z {
+  width: 700px;
+  margin: 0 auto;
+  outline: 1px solid teal;
+  height: 360px;
+  position: relative;
+}
+.box-z {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: azure;
+  position: absolute;
+}
+.box-z.red-z {
+  background-color: rgba(255, 0, 0);
+  width: 150px;
+  height: 150px;
+  position: absolute;
+  top: 20px;
+  z-index: 1;
+}
+.box-z.green-z {
+  background-color: rgba(0, 255, 0);
+  width: 120px;
+  height: 120px;
+  position: absolute;
+  left: 60px;
+  z-index: 3;
+}
+.box-z.blue-z {
+  background-color: rgba(0, 0, 255);
+  width: 80px;
+  height: 80px;
+  position: absolute;
+  left: 130px;
+  z-index: 2;
+}
+/* z-index: змінює послідовність відображення по осі Z. чим більше значення - тим вище буде єлемент. може мати і мінусове значення */
