@@ -1,0 +1,138 @@
+/*  -- POSITION: RELATIVE --  */
+
+.wrapper {
+  font-size: 30px;
+}
+.container {
+  width: 700px;
+  margin: 0 auto;
+  outline: 1px solid teal;
+  height: 360px;
+}
+.box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: azure;
+}
+.box.red {
+  background-color: red;
+  width: 150px;
+  height: 150px;
+}
+.box.green {
+  background-color: rgba(0, 255, 0, 0.5);
+  width: 120px;
+  height: 120px;
+  position: relative;
+  /* position: relative не вириває елемент з потоку. з'являється можливість використання top, left, bottom, right. тоді старт береться від вказаного кутка батьківського поля. може залазити на сусідні елементи. значення может бути як плюсове, так і мінусове. може виходити за межі робочого поля. ВАЖКО ІНСПЕКТУВАТИ!!! не працює з МАРДЖИНом */
+  top: 20px;
+  left: -20px;
+}
+.box.blue {
+  background-color: blue;
+  width: 80px;
+  height: 80px;
+}
+
+/*  -- POSITION: ABSOLUTE --  */
+
+.wrapper-abs {
+  font-size: 30px;
+}
+.container-abs {
+  width: 700px;
+  margin: 0 auto;
+  outline: 1px solid teal;
+  height: 360px;
+  position: relative;
+}
+.box-abs {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: azure;
+}
+.box-abs.red-abs {
+  background-color: red;
+  width: 150px;
+  height: 150px;
+}
+.box-abs.green-abs {
+  background-color: rgba(0, 255, 0, 0.5);
+  width: 120px;
+  height: 120px;
+  position: absolute;
+  /* position: absolute звільняє місце елементу в потоці. є можливість використання top, left, bottom, right. тоді старт береться від вказаного кутка поля body, якщо не вказаний position: relative в іншому місці. може залазити на сусідні елементи. значення может бути як плюсове, так і мінусове. може виходити за межі робочого поля */
+  /* використовувати position: absolute краще привязуючись до найближчого position: relative, інакше, при привязці до далекого родича при зміні обєму контенту вся розмітка буде зіскакувати*/
+  /* position: absolute завжди привязується до найближчого релативного єлементу. хто найближчий - той і тато */
+  /* зручно привязувати до контейнеру, який не змінює розміри */
+  top: 20px;
+  right: 50px;
+}
+.box-abs.blue-abs {
+  background-color: blue;
+  width: 80px;
+  height: 80px;
+  position: absolute;
+  /* absolute може позиціонуватись не тільки відносно relative а і відносно інших absolute */
+  right: 0;
+}
+
+/* -- POSITION: FIXED -- */
+
+.wrapper-fix {
+  font-size: 30px;
+}
+.container-fix {
+  width: 700px;
+  margin: 0 auto;
+  outline: 1px solid teal;
+  height: 560px;
+}
+.box-fix {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: azure;
+}
+.box-fix.red-fix {
+  background-color: rgba(255, 0, 0, 0.5);
+  width: 150px;
+  height: 150px;
+  position: relative;
+}
+.box-fix.green-fix {
+  background-color: rgba(0, 255, 0, 0.5);
+  width: 120px;
+  height: 120px;
+  position: fixed;
+  top: 50px;
+  left: 400px;
+  /* при встановленні значень відступів для position: fixed привязка елемента відбувається від діапазона робочого поля */
+}
+.box-fix.blue-fix {
+  background-color: rgba(0, 0, 255, 0.5);
+  width: 80px;
+  height: 80px;
+}
+
+/* -- POSITION: FIXED TITLE -- */
+div {
+  display: block;
+}
+.container-sticky {
+  width: 700px;
+  margin: 0 auto;
+  outline: 1px solid teal;
+  height: 360px;
+  position: relative;
+}
+.title {
+  position: sticky;
+  top: 10px;
+  background-color: teal;
+}
+.title-new {
+  background-color: purple;
+}
