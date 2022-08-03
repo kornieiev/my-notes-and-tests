@@ -1,184 +1,108 @@
-/*  -- POSITION: RELATIVE --  */
+/*  -- TRANSFORMATION --  */
 
 .wrapper {
-  font-size: 30px;
+  width: 1000px;
+  margin: 0 auto;
+  outline: 1px solid tomato;
+  /* font-size: 30px; */
 }
 .container {
-  width: 700px;
   margin: 0 auto;
   outline: 1px solid teal;
-  height: 360px;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 .box {
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 140px;
+  height: 140px;
   color: azure;
 }
-.box.red {
+
+.translate {
   background-color: red;
-  width: 150px;
-  height: 150px;
+  /* transform: translate(100px, 100px); */
+  /* transform: translate - перше значення - перемыщення по осі Х, друге - Y. може мати мінусове значення. може задаватись в відсотках. Може використовуватись в позиціонуванні для привязки елементів*/
+  /* щоб поставити елемент рівно по центру блока потрібно в .container прописати значення  position: relative, а в .translate прописати position: absolute, top: 50%; left: 50% а в transform: translate(-50%, -50%)  */
 }
-.box.green {
-  background-color: rgba(0, 255, 0, 0.5);
-  width: 120px;
-  height: 120px;
-  position: relative;
-  /* position: relative не вириває елемент з потоку. з'являється можливість використання top, left, bottom, right. тоді старт береться від вказаного кутка батьківського поля. може залазити на сусідні елементи. значення может бути як плюсове, так і мінусове. може виходити за межі робочого поля. ВАЖКО ІНСПЕКТУВАТИ!!! не працює з МАРДЖИНом */
-  top: 20px;
-  left: -20px;
+
+/*  */
+/*  */
+/*  */
+
+.rotate {
+  background-color: green;
+  /* transform: rotate(45deg); */
+  /* rotate - обертання відбувається відносно осі Z */
+  /* rotateX - обертання відбувається відносно осі X */
+  /* rotateY - обертання відбувається відносно осі Y */
+  /* усі властивості які задаються на цей елемент обертаються разом з ним (марджин і тд) */
+  /* transform-origin: top left; */
+  /* transform-origin - задає точку відносно якої елемент буде крутитись при використанні rotate*/
+  /* transition-property: transform;
+  transition-duration: 500ms;
+  transition-delay: 200ms;
+  transition-timing-function: linear; */
+  /* transition-timing-function: ease-in-out; */
+  /* transition-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1); */
+  /* https://cubic-bezier.com */
+  transition: transform 500ms 200ms ease-in-out, background-color 500ms 200ms ease-in-out;
+  /* плавна зміна кольору при ховері */
 }
-.box.blue {
+/* якщо часто повторюються значення "500ms 200ms ease-in-out" то їх можна заганяти в змінні */
+/* !!! ПЛАВНИЙ ПЕРЕХІД ЗАДАЄТЬСЯ НА ЕЛЕМЕНТ, А НЕ НА ХОВЕР !!! */
+
+/* .rotate span {
+  transform: rotate(-45deg);
+} */
+
+/* повертає елемент в одну сторону, а текст в іншу. таким чином текст ніби не повертається */
+
+.rotate span {
+  transition-property: transform;
+  transition-duration: 500ms;
+  transition-delay: 200ms;
+  transition-timing-function: ease-in-out;
+  /* можна усі ці властивості прописати в один рядок */
+  /* transition: transform 500ms 200ms ease-in-out; */
+  /*  */
+}
+/*  */
+
+/* залишає напрямок тексту. змінює лише поворот єлементу */
+.rotate:hover span {
+  transform: rotate(-45deg);
+}
+.rotate:hover {
+  transform: rotate(45deg);
+  background-color: deeppink;
+}
+
+/*  */
+/*  */
+/*  */
+
+.scale {
   background-color: blue;
-  width: 80px;
-  height: 80px;
+  transform: scale(1.14);
+  /* збільшує, або зменшує розмір елементу і контент який в ньому. задається в % або числових значеннях. може мати мінусове значення*/
+}
+.scale:hover {
+  transform: scale(1.5);
+  background-color: aquamarine;
 }
 
-/*  -- POSITION: ABSOLUTE --  */
+/*  */
+/*  */
+/*  */
 
-.wrapper-abs {
-  font-size: 30px;
+.skew {
+  background-color: gray;
+  transform: skew(15deg, 40deg);
+  /* задає нахил елементу */
+  /* можна задавати або одне значення X, або разом з Y через кому (40deg, 40deg) */
 }
-.container-abs {
-  width: 700px;
-  margin: 0 auto;
-  outline: 1px solid teal;
-  height: 360px;
-  position: relative;
-}
-.box-abs {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: azure;
-}
-.box-abs.red-abs {
-  background-color: red;
-  width: 150px;
-  height: 150px;
-}
-.box-abs.green-abs {
-  background-color: rgba(0, 255, 0, 0.5);
-  width: 120px;
-  height: 120px;
-  position: absolute;
-  /* position: absolute звільняє місце елементу в потоці. є можливість використання top, left, bottom, right. тоді старт береться від вказаного кутка поля body, якщо не вказаний position: relative в іншому місці. може залазити на сусідні елементи. значення может бути як плюсове, так і мінусове. може виходити за межі робочого поля */
-  /* використовувати position: absolute краще привязуючись до найближчого position: relative, інакше, при привязці до далекого родича при зміні обєму контенту вся розмітка буде зіскакувати*/
-  /* position: absolute завжди привязується до найближчого релативного єлементу. хто найближчий - той і тато */
-  /* зручно привязувати до контейнеру, який не змінює розміри */
-  top: 20px;
-  right: 50px;
-}
-.box-abs.blue-abs {
-  background-color: blue;
-  width: 80px;
-  height: 80px;
-  position: absolute;
-  /* absolute може позиціонуватись не тільки відносно relative а і відносно інших absolute */
-  right: 0;
-}
-
-/* -- POSITION: FIXED -- */
-
-.wrapper-fix {
-  font-size: 30px;
-}
-.container-fix {
-  width: 700px;
-  margin: 0 auto;
-  outline: 1px solid teal;
-  height: 560px;
-}
-.box-fix {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: azure;
-}
-.box-fix.red-fix {
-  background-color: rgba(255, 0, 0, 0.5);
-  width: 150px;
-  height: 150px;
-  position: relative;
-}
-.box-fix.green-fix {
-  background-color: rgba(0, 255, 0, 0.5);
-  width: 120px;
-  height: 120px;
-  position: fixed;
-  top: 50px;
-  left: 400px;
-  /* при встановленні значень відступів для position: fixed привязка елемента відбувається від діапазона робочого поля */
-}
-.box-fix.blue-fix {
-  background-color: rgba(0, 0, 255, 0.5);
-  width: 80px;
-  height: 80px;
-}
-
-/* -- POSITION: STICKY -- */
-div {
-  display: block;
-}
-.container-sticky {
-  width: 700px;
-  margin: 0 auto;
-  outline: 1px solid teal;
-  height: 600px;
-  position: relative;
-}
-.title {
-  position: sticky;
-  top: 10px;
-  /* якщо задати значення buttom і перенести в html тег з класом title, то приліпання буде знизу*/
-  background-color: teal;
-}
-.title-new {
-  background-color: purple;
-}
-
-/* -- POSITION: ABSOLUTE -- */
-
-.wrapper-z {
-  font-size: 30px;
-}
-.container-z {
-  width: 700px;
-  margin: 0 auto;
-  outline: 1px solid teal;
-  height: 360px;
-  position: relative;
-}
-.box-z {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: azure;
-  position: absolute;
-}
-.box-z.red-z {
-  background-color: rgba(255, 0, 0);
-  width: 150px;
-  height: 150px;
-  position: absolute;
-  top: 20px;
-  z-index: 1;
-}
-.box-z.green-z {
-  background-color: rgba(0, 255, 0);
-  width: 120px;
-  height: 120px;
-  position: absolute;
-  left: 60px;
-  z-index: 3;
-}
-.box-z.blue-z {
-  background-color: rgba(0, 0, 255);
-  width: 80px;
-  height: 80px;
-  position: absolute;
-  left: 130px;
-  z-index: 2;
-}
-/* z-index: змінює послідовність відображення по осі Z. чим більше значення - тим вище буде єлемент. може мати і мінусове значення */
+/* значення в transform: можна комбінувати. записується через пробіл, напр: */
+/* transform: rotate(-45deg) scale(1.14) skew(15deg, 40deg) */
