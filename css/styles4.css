@@ -1,0 +1,48 @@
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+}
+
+.section {
+  width: 500px;
+  height: 350px;
+  outline: 2px solid red;
+  margin: 20px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+}
+
+.text {
+  outline: 2px solid green;
+  margin: 0px auto;
+  padding: 5px;
+  display: flex;
+  transform: rotate(-90deg) translateY(100%);
+  /* transform-origin: top left; */
+  /* transform-origin задає точку відносно якої буде обертатись
+  translateY - повертає елемент в діапазон поля по осі Y */
+}
+.link1 {
+  outline: 2px solid orange;
+  margin: 20px auto;
+  padding: 5px;
+  display: flex;
+  transform: rotate(90deg);
+  text-decoration: none;
+}
+.link2 {
+  outline: 2px solid blue;
+  margin: 20px auto;
+  padding: 5px;
+  display: flex;
+  transform: rotate(-30deg);
+  transform-origin: bottom left;
+}

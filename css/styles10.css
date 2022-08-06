@@ -1,0 +1,89 @@
+/*  */
+/*  */
+/*  -- ANIMATION --  */
+.wrapper-anime {
+  width: 600px;
+  height: 200px;
+  margin: 0 auto;
+  outline: 1px solid red;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* Ця анімація працює після перезавантаження сторінки */
+.block {
+  width: 150px;
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: sans-serif;
+  text-transform: uppercase;
+  color: #fff;
+  background-color: grey;
+  border-radius: 5%;
+  animation-name: rotator;
+  /* ОБОВЯЗКОВА ВЛАСТИВІСТЬ! Імя аніміції (rotator). прописується в css з @keyframes */
+  animation-duration: 2.5s;
+  /* ОБОВЯЗКОВА ВЛАСТИВІСТЬ! Період спрацювання анімыції */
+  animation-delay: 2s;
+  /* затримка перед початком спрацювання анімації */
+  animation-timing-function: cubic-bezier(0.075, 0.885, 0.32, 1.275);
+  /* animation-timing-function: linear; */
+  animation-iteration-count: 2;
+  /* кількість циклів анімації */
+  animation-direction: normal;
+  /* напрямок анімації:
+  normal- вперед, reverse - в протилежну сторону, alternate - один цикл в одну сторону, наступний в іншу) */
+  animation-fill-mode: forwards;
+  /* backwards - за замовчуванням, блок повернеться в свій початковий стан
+    forwards - елемент залишиться в фінальному положенні */
+}
+
+/* Анімації, які працюють на ховері елементу: */
+.block:hover {
+  animation-play-state: paused;
+  /* running - по замовчуванню; paused - при наведенні анімація буде зупинятись */
+}
+
+@keyframes rotator {
+  0% {
+    transform: rotate(0);
+    border-radius: 5%;
+    background-color: #fff;
+  }
+  33% {
+    transform: rotate(120deg);
+    border-radius: 25%;
+    background-color: rgb(172, 172, 172);
+  }
+  66% {
+    transform: rotate(240deg);
+    border-radius: 50%;
+    background-color: rgb(82, 82, 82);
+  }
+  100% {
+    transform: rotate(360deg);
+    border-radius: 5%;
+    background-color: grey;
+  }
+}
+
+.block2 {
+  width: 190px;
+  height: 190px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: sans-serif;
+  text-transform: uppercase;
+  color: #fff;
+  background-color: rgb(91, 61, 24);
+  animation-name: rotator;
+  animation-duration: 1.5s;
+  animation-delay: 2s;
+  animation-timing-function: cubic-bezier(0.075, 0.885, 0.32, 1.275);
+  animation-iteration-count: 2;
+  /* кількість циклів анімації */
+  animation-direction: reverse;
+}
