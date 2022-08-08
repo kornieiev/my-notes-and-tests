@@ -1,0 +1,64 @@
+.wrapper {
+  width: 600px;
+  height: 300px;
+  margin: 0 auto;
+  outline: 1px solid red;
+  /* position: relative; */
+  /* display: flex;
+  align-items: center;
+  justify-content: center; */
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  border: none;
+  margin: 0;
+  padding: 10px 30px;
+  border-radius: 3px;
+  background-color: #008080;
+  color: #fff;
+  font: inherit;
+  cursor: pointer;
+  transition: background-color 1000ms linear;
+  position: relative;
+  overflow: hidden;
+}
+.btn::before {
+  content: '';
+  display: inline-block;
+  margin-right: 5px;
+  width: 25px;
+  height: 25px;
+  background-image: url('../img/uk.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  transition: transform 1000ms linear;
+}
+.btn:hover::before,
+.btn:focus::before {
+  transform: translateY(-35px);
+}
+.btn::after {
+  position: absolute;
+  top: 50%;
+  left: 30px;
+  content: '';
+  display: inline-block;
+  width: 22px;
+  height: 25px;
+  background-image: url('../img/ukraine.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  transition: transform 1000ms linear;
+  transform: translateY(calc(-50% + 35px));
+}
+
+.btn:hover::after,
+.btn:focus::after {
+  transform: translateY(-50%);
+}
+.btn:hover,
+.btn:focus {
+  background-color: pink;
+}

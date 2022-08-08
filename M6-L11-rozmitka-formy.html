@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/styles11-conspect.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.1.0/modern-normalize.min.css"
+    />
+    <title>М6-L11 - КОНСПЕКТ</title>
+  </head>
+  <body>
+    <h2>Радіо-кнопки (перемикачі)</h2>
+    <div>
+      <form class="js-speaker-form form-css" autocomplete="on" novalidate>
+        <label for="name">Ім'я:</label>
+        <input type="text" name"name" id"name" class="label-css" autofocus placeholder="Вася
+        Пупкін"/>
+        <!--   Placeholders in Form Fields Are Harmful >>> https://www.youtube.com/watch?v=jrigp2L-P-0&feature=youtu.be  -->
+        <br />
+        <label for="tel">Телефон:</label>
+        <input type="tel" name="tel" id="tel" class="label-css" placeholder="+38-0XX-XXX-XX-XX " />
+        <br />
+        <label for="mail">E-mail:</label>
+        <input type="email" name="mail" id="mail" class="label-css" placeholder="mail@mail.com" />
+        <br />
+        <button class="btn" type="submit">Залишити заявку</button>
+        <br />
+        <label for="mail">E-mail:</label>
+        <input type="password" name="password" minlength="5" maxlength="12" />
+      </form>
+    </div>
+    <br />
+    <h2>Радіо-кнопки (перемикачі)</h2>
+    <form>
+      <p>Choose a color:</p>
+      <label>
+        <input type="radio" name="color" value="red" checked />
+        Red
+      </label>
+      <label>
+        <input type="radio" name="color" value="white" />
+        White
+      </label>
+      <label>
+        <input type="radio" name="color" value="green" />
+        Green
+      </label>
+    </form>
+    <br />
+    <h2>Чекбокси (прапорці)</h2>
+    <form>
+      <p>What are your hobbies?</p>
+      <label>
+        <input type="checkbox" name="hobby" value="music" checked />
+        Music
+      </label>
+      <label>
+        <input type="checkbox" name="hobby" value="sports" checked />
+        Sports
+      </label>
+      <label>
+        <input type="checkbox" name="hobby" value="reading" />
+        Reading
+      </label>
+      <br />
+      <h2>Числа</h2>
+      <label>
+        Age
+        <input type="number" name="age" value="0" min="18" max="120" step="0.5" />
+        <!--    min і max визначають діапазон введення, step вказує крок зміни числа (за замовчуванням - 1)   -->
+      </label>
+    </form>
+    <br />
+    <h2>Повзунки</h2>
+    <div>
+      <label class="label-povzunki">
+        Interest rate:
+        <input type="range" name="interest_rate" value="40" min="0" max="100" step="20" />
+      </label>
+      <p>Selected value: <span class="js-selected-value">40</span></p>
+    </div>
+    <h2>Дата та час</h2>
+    <div>
+      <form>
+        <label class="label-time-and-date">
+          Date
+          <input type="date" min="1920-01-01" max="2020-01-01" class="input-time-and-date" />
+        </label>
+
+        <label class="label-time-and-date">
+          Time
+          <input type="time" />
+        </label>
+
+        <label>
+          Date and time
+          <input type="datetime-local" min="1920-01-01T00:00" max="2020-01-01T00:00" />
+        </label>
+
+        <button type="submit">Submit</button>
+      </form>
+      <!--   Через різний зовнішній вигляд у різних браузерах і складність його зміни за допомогою CSS, замість нативного календаря найчастіше використовують готові JavaScript-бібліотеки   -->
+    </div>
+    <br />
+    <p>Елемент "textarea"</p>
+    <div>
+      <form>
+        <label class="label-ta">
+          Email
+          <input type="email" name="email" placeholder="example@mail.com" class="input-ta" />
+        </label>
+        <label class="label-ta">
+          Feedback
+          <textarea
+            name="feedback"
+            rows="5"
+            placeholder="Type your message here..."
+            class="textarea-ta"
+          ></textarea>
+        </label>
+        <button type="submit">Submit</button>
+      </form>
+      <!--   rows встановлює кількість рядків (висоту), а cols - стовпчиків (ширину). На практиці вказується тільки rows, а ширина елементу контролюється за допомогою CSS   -->
+      <!--   За замовчуванням елемент <textarea> можна розтягувати за горизонталлю і вертикаллю. Для того щоб контролювати можливість зміни розміру користувачем, в CSS є властивість resize.
+
+resize: both | horizontal | vertical | none   -->
+    </div>
+    <br />
+    <h2>Елемент "select"</h2>
+    <div>
+      <label for="size">Size</label>
+      <select id="size" name="size">
+        <option value="xs">Extra Small</option>
+        <option value="s">Small</option>
+        <option value="m" selected>Medium</option>
+        <option value="l">Large</option>
+      </select>
+      <!--   За замовчуванням вибраний перший елемент <option> зі списку. Це можна змінити, задавши необхідній опції атрибут-буль selected.   -->
+    </div>
+    <br />
+    <h2>Групування опцій</h2>
+    <div>
+      <label for="month">Month</label>
+      <select name="month" id="month">
+        <optgroup label="Summer">
+          <option value="s6">June</option>
+          <option value="s7">July</option>
+          <option value="s8">August</option>
+        </optgroup>
+
+        <optgroup label="Autumn">
+          <option value="s9">September</option>
+          <option value="s10">October</option>
+          <option value="s11">November</option>
+        </optgroup>
+      </select>
+      <!--  Аби розбити список на окремі групи, не пов'язані між собою існує тег <optgroup>. Щоб додати заголовок групи, використовується атрибут label.    -->
+    </div>
+    <br />
+    <h2>Елемент Автозаповнення "datalist"</h2>
+    <div>
+      <label for="fav">Choose your favourite browser</label>
+      <input list="browsers" name="fav" id="fav" />
+
+      <datalist id="browsers">
+        <option>Edge</option>
+        <option>Firefox</option>
+        <option>Chrome</option>
+        <option>Opera</option>
+        <option>Safari</option>
+      </datalist>
+      <!--   Елемент <datalist> створює список попередньо встановлених значень, які можна вибирати під час набору в пов'язаному текстовому полі. Цей список прихований і стає доступним під час отримання інпутом фокуса і набору тексту в ньому. Список, що створюється елементом <datalist>, зв'язується з текстовим полем за допомогою атрибута id. Його значення повинно збігатися зі значенням атрибута list тегу <input>   -->
+    </div>
+    <br />
+    <h2>Атрибут value</h2>
+    <div>
+      <label for="state">Choose your state</label>
+      <input type="text" name="state" id="state" list="states" />
+      <datalist id="states">
+        <option value="AL">Alabama</option>
+        <option value="AK">Alaska</option>
+        <option value="AZ">Arizona</option>
+        <option value="AR">Arkansas</option>
+      </datalist>
+      <!--   Елементи <option> також можуть мати атрибут value. Це корисно, якщо текст опції та значення не збігаються. Наприклад, користувач може не знати скорочення штату в США. У випадному меню він побачить список штатів та їх скорочень, а вибираючи опції, текстове поле буде заповнено лише значенням опції   -->
+    </div>
+    <br />
+    <h2>Групування полів</h2>
+    <br />
+    <h2>Елементи fieldset і legend</h2>
+    <div>
+      <form>
+        <fieldset>
+          <legend>Enter your contact details</legend>
+          <label>
+            Name
+            <input type="text" name="username" />
+          </label>
+          <label>
+            Email
+            <input type="email" name="email" />
+          </label>
+        </fieldset>
+
+        <fieldset>
+          <legend>Your favourite programming language</legend>
+          <label>
+            <input type="checkbox" name="language" value="python" />
+            Python
+          </label>
+          <label>
+            <input type="checkbox" name="language" value="js" />
+            JavaScript
+          </label>
+          <label>
+            <input type="checkbox" name="language" value="ruby" />
+            Ruby
+          </label>
+        </fieldset>
+
+        <fieldset>
+          <legend>I want to receive</legend>
+          <label>
+            <input type="checkbox" name="newsletter" value="weekly" />
+            The weekly newsletter
+          </label>
+          <label>
+            <input type="checkbox" name="newsletter" value="company_offers" />
+            Offers from the company
+          </label>
+          <label>
+            <input type="checkbox" name="newsletter" value="associated_offers" />
+            Offers from associated companies
+          </label>
+        </fieldset>
+
+        <button type="submit">Subscribe</button>
+      </form>
+      <!--   Елемент <fieldset> - це контейнер для групування декількох пов'язаних елементів у формі, а вкладений <legend> виконує роль заголовка групи. Пов'язані радіо-кнопки і чекбокси завжди повинні бути згруповані, інші типи полів групуються у разі потреби.   -->
+    </div>
+    <br />
+    <h2>Групування з можливістю оформлення</h2>
+    <div>
+      <form class="form">
+        <div class="form-group" role="group" aria-labelledby="contact-details-head">
+          <p id="contact-details-head">Enter your contact details</p>
+          <label>
+            Name
+            <input type="text" name="username" />
+          </label>
+          <label>
+            Email
+            <input type="email" name="email" />
+          </label>
+        </div>
+
+        <div class="form-group" role="group" aria-labelledby="language-head">
+          <p id="language-head">Your favourite programming language</p>
+          <label>
+            <input type="checkbox" name="language" value="python" />
+            Python
+          </label>
+          <label>
+            <input type="checkbox" name="language" value="js" />
+            JavaScript
+          </label>
+          <label>
+            <input type="checkbox" name="language" value="ruby" />
+            Ruby
+          </label>
+        </div>
+
+        <div class="form-group" role="group" aria-labelledby="newsletter-head">
+          <p id="newsletter-head">I want to receive</p>
+          <label>
+            <input type="checkbox" name="newsletter" value="weekly" />
+            The weekly newsletter
+          </label>
+          <label>
+            <input type="checkbox" name="newsletter" value="company_offers" />
+            Offers from the company
+          </label>
+          <label>
+            <input type="checkbox" name="newsletter" value="associated_offers" />
+            Offers from associated companies
+          </label>
+        </div>
+
+        <button type="submit">Subscribe</button>
+      </form>
+      <!--   Елементи <fieldset> і <legend> мають відмінну семантику, але обмежені можливості оформлення. Здебільшого для групування елементів форми використовується <div> з атрибутами доступності role і aria-labelledby   -->
+      <!--   Атрибут role="group" вказує на те, що елементи всередині цього <div> є частиною групи.
+Атрибут aria-labelledby="contact-details-head" містить ідентифікатор елемента з описом групи.   -->
+    </div>
+    <br />
+    <br />
+    <br />
+    <script src="./js/modal.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+  </body>
+</html>

@@ -107,3 +107,54 @@
 }
 /* значення в transform: можна комбінувати. записується через пробіл, напр: */
 /* transform: rotate(-45deg) scale(1.14) skew(15deg, 40deg) */
+
+/*  */
+/*     -- ВИПАДАЮЧЕ МЕНЮ --     */
+/*  */
+
+.menu {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+
+  display: flex;
+}
+
+.menu-item {
+  position: relative;
+  margin-right: 15px;
+  outline: 2px solid tomato;
+}
+.menu-item:hover .submenu {
+  display: block;
+}
+.menu-item:hover .menu-link {
+  background-color: palegoldenrod;
+  color: blueviolet;
+  font-weight: 700;
+}
+
+.menu-link {
+  display: block;
+  padding: 10px 20px;
+  text-decoration: none;
+  background-color: teal;
+  color: white;
+}
+
+.submenu {
+  position: absolute;
+  padding: 10px;
+  margin: 0;
+  list-style: none;
+  background-color: #ccc;
+  display: none;
+  /* display: none - ховає елемент */
+  top: 100%;
+  left: 0;
+  width: 120%;
+}
+
+.submenu a {
+  text-decoration: none;
+}
