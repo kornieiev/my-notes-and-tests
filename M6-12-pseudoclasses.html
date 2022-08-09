@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/m6-l12-validation.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.1.0/modern-normalize.min.css"
+    />
+    <title>М6-L12 - Псевдокласи стану - КОНСПЕКТ</title>
+  </head>
+  <body>
+    <br />
+    <a href="./index.html"> назад к Списку уроков</a>
+    <br />
+    <h1>Псевдокласи стану</h1>
+  <p>Існує набір псевдокласів, створених спеціально для елементів форм, і жодним чином не впливають на інші елементи. За допомогою них можна оформляти поля форми за станом валідності введених даних або обов'язковості заповнення.</p>
+  <br>
+  <h2>:enabled і :disabled - .ed</h2>
+  <p>Дозволяють вибрати елемент в активному або відключеному стані, який визначається присутністю або відсутністю булевого атрибута disabled. Застосовуються до елементів input, select і button.</p>
+  <div class="ed">
+<button class="btn-ed">Active button</button>
+<button class="btn-ed" disabled>Disabled button</button>    
+  </div>
+  <br>
+  <h2>:checked - .ch</h2>
+  <p>Застосовується до радіокнопок і чекбоксів, та дозволяє вибрати тільки відзначені поля. Наприклад, нехай при виборі чекбоксу текст мітки стає синім. Використовуючи селектор +, можна вибрати мітку, коли чекбокс відзначений, але для цього необхідно, щоб тег <label> був у розмітці після чекбоксу.</p>
+    <div class="ch">
+      <form class="form">
+  <div role="group" class="form-group">
+    <b class="form-caption">What are your hobbies?</b>
+
+    <div class="form-field">
+      <input type="checkbox" class="form-input" name="hobby" value="sports" id="sports">
+      <label class="form-label" for="sports">Sports</label>
+    </div>
+    <div class="form-field">
+      <input type="checkbox" class="form-input" name="hobby" value="music" id="music">
+      <label class="form-label" for="music">Music</label>
+    </div>
+    <div class="form-field">
+      <input type="checkbox" class="form-input" name="hobby" value="books" id="books">
+      <label class="form-label" for="books">Books</label>
+    </div>
+  </div>
+  <button type="submit" class="btn-ch">Submit</button>
+</form>
+    </div>
+  </body>
+</html>

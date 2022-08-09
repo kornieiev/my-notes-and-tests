@@ -1,13 +1,38 @@
 body {
-  padding-left: 50px;
+  margin-left: 20px;
 }
-div {
-  width: 500px;
+h1 {
+  margin-left: 80px;
+  margin-bottom: 5px;
+  background-color: red;
+  display: inline-block;
+  color: white;
+}
+p {
+  margin: 5px 20px;
 }
 h2 {
+  margin: 5px 50px;
+  background-color: tomato;
   display: inline-block;
-  background-color: chocolate;
 }
+h3 {
+  margin: 5px 100px;
+  background-color: rgb(233, 195, 90);
+  display: inline-block;
+}
+h4 {
+  margin: 5px 50px;
+  color: rgb(121, 121, 121);
+  display: inline-block;
+}
+div {
+  max-width: 500px;
+  display: block;
+  margin: 0 auto;
+  outline: 1px sokid tomato;
+}
+
 label {
   display: block;
 }

@@ -1,0 +1,100 @@
+body {
+  margin-left: 20px;
+}
+h1 {
+  margin-left: 80px;
+  margin-bottom: 5px;
+  background-color: red;
+  display: inline-block;
+  color: white;
+}
+p {
+  margin: 5px 20px;
+}
+h2 {
+  margin: 5px 50px;
+  background-color: tomato;
+  display: inline-block;
+}
+div {
+  max-width: 500px;
+  /* display: block; */
+  margin: 0 auto;
+  border: 1px sokid tomato;
+}
+
+/* :enabled і :disabled - .ed */
+/* :enabled і :disabled - .ed */
+.btn-ed:enabled {
+  box-shadow: 0px 3px 1px -2px rgb(0 0 0 / 20%), 0px 2px 2px 0px rgb(0 0 0 / 14%),
+    0px 1px 5px 0px rgb(0 0 0 / 12%);
+}
+.btn-ed:disabled {
+  background-color: lightgray;
+  color: #2a2a2a;
+}
+.ed {
+  box-sizing: border-box;
+}
+.btn-ed {
+  display: inline-flex;
+  margin: 0 4px;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 4px;
+
+  font-family: sans-serif;
+  font-size: 16px;
+
+  background-color: #2196f3;
+  color: #fff;
+  cursor: pointer;
+}
+.btn-ed:hover,
+.btn-ed:focus {
+  background-color: #1976d2;
+}
+/* :enabled і :disabled - .ed */
+
+/* :checked - .ch */
+/* :checked - .ch */
+/* Selecting .form-label when the checkbox preceding it in markup is checked */
+.form-input:checked + .form-label {
+  color: #2196f3;
+}
+/* Example styles */
+.ch {
+  box-sizing: border-box;
+}
+.form-caption {
+  display: block;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+.form-group {
+  margin-bottom: 24px;
+}
+.form-field {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+}
+.form-label {
+  margin-left: 4px;
+  cursor: pointer;
+}
+.btn-ch {
+  display: inline-flex;
+  padding: 12px 32px;
+  border: none;
+  border-radius: 4px;
+  background-color: #2196f3;
+  color: #fff;
+  font-size: inherit;
+  cursor: pointer;
+}
+.btn-ch:hover,
+.btn-ch:focus {
+  background-color: #1976d2;
+}
+/* :checked - .ch */
