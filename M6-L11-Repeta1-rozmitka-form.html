@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/m6-l11-repeta1-rozmitka-form.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.1.0/modern-normalize.min.css"
+    />
+    <title>М6-L11 - РОЗМІТКА ФОРМ - Репета</title>
+  </head>
+  <body>
+    <br />
+    <a href="./index.html"> назад к Списку уроков</a>
+    <br />
+    <h1>_ РОЗМІТКА ФОРМ _</h1>
+
+    <!-- Вводимо імя, номер телефону і пошту -->
+
+    <form class="js-speaker-form">
+        <label for="user-name">Ім'я</label>
+        <input type="text" name="user-name" id="user-name">
+<!-- name="user-name" - ім'я змінної, яке піде на сервер. використовується для звязки з бекендом -->
+<!-- for="user-name в <label> зв'язує id="user-name" в <input> для того щоб працював функціонал кліку по <label> щоб спрацьовував фокус на <input> -->
+    
+    </form>
+
+
+
+
+
+
+
+
+
+    <script>
+        (() => {
+            document
+            .querySelector('.js-speaker-form')
+            .addEventListener('submit', e => {
+                e.preventDefault();
+
+                new FormData(e.currentTarget).forEach((value,name) => console.log(`${name}: ${value}`)
+                );
+            });
+        })()
+    </script>
+
+  </body>
+</html>
