@@ -16,15 +16,123 @@
     <a href="./index.html"> назад к Списку уроков</a>
     <br />
     <h1>_ РОЗМІТКА ФОРМ _</h1>
+    <br>
 
     <!-- Вводимо імя, номер телефону і пошту -->
+    <p>Вводимо імя, номер телефону і пошту</p>
 
     <form class="js-speaker-form">
+
+      <div class="form-field">
         <label for="user-name">Ім'я</label>
-        <input type="text" name="user-name" id="user-name">
+        <input type="text" name="user-name" id="user-name" autofocus autocomplete="on" placeholder="Иванов Иван">
+      </div>
 <!-- name="user-name" - ім'я змінної, яке піде на сервер. використовується для звязки з бекендом -->
 <!-- for="user-name в <label> зв'язує id="user-name" в <input> для того щоб працював функціонал кліку по <label> щоб спрацьовував фокус на <input> -->
+      <div class="form-field">
+        <label for="tel">Телефон</label>
+      <input type="tel" name="tel" id="tel">
+
+      </div>
+      <div class="form-field">
+        <label for="email">Пошта</label>
+      <input type="email" name="email" id="email">
+      </div>
+
+<!-- ЧЕКБОКС -->
+    <p>ЧЕКБОКС</p>
+
+    <div role="group" class="group">
+      <h2 class="group-title">Тема доклада</h2>
+
+      <ul class="topic-options">
+      <li>
+        <input type="checkbox" name="group-checkbox" value="html" id="html">
+        <label for="html">HTML</label>
+      </li>
+
+      <li>
+        <input type="checkbox" name="group-checkbox" value="css" id="css">
+        <label for="css">CSS</label>
+      </li>
+
+      <li>
+        <input type="checkbox" name="group-checkbox" value="js" id="js">
+        <label for="js">JavaScript</label>
+      </li>
+      <!-- для групи чекбоксів використовується однакова назва в name. Напр. "group-checkbox" -->
+    </ul>
+    </div>
+
+
+<!-- РАДІОБАТТОН -->
+    <p>РАДІОБАТТОН</p>
+
+    <div role="group" class="group">
+      <h2 class="group-title">Уровень вашей экспертности</h2>
+        <ul class="experiance-options">
+          
+          <li><input type="radio" name="experience" value="junior" id="junior">
+            <label for="junior">Junior</label>
+          </li>
+
+          <li>
+            <input type="radio" name="experience" value="middle" id="middle">
+            <label for="middle">Middle</label>
+          </li>
+
+          <li>
+            <input type="radio" name="experience" value="senior" id="senior">
+            <label for="senior">Senior</label>
+          </li>
+        </ul>
+    </div>
+
+
+<!-- Time-Date -->
+    <p>Time-Date</p>
+
+    <div class="form-field">    
+      <!-- <label for="time">Время</label>
+      <input
+      type="time"
+      name="time"
+      id="time"> -->
+      <label for="date">Дата</label>
+      <input 
+        type="datetime-local" 
+        name="date" 
+        id="date" 
+        min="2022-08-13T10:00"
+        max="2022-08-17T17:00"
+      />
+    </div>
     
+
+<!-- Загрузка файла -->
+    <p>Загрузка файла</p>
+    <div class="form-field">
+      <label for="p">Загрузка файла</label>
+      <input type="file" name="pdf" id="pdf"> 
+    </div>
+
+<!-- Оставить комментарий -->
+    <p>Оставить комментарий</p>
+
+    <div class="formfield">
+    <label for="comment">Оставьте комментарий</label>
+    <textarea name="comment" id="comment" cols="" rows="8"></textarea>
+  </div>
+
+<!-- Checkbox - Погоджуюсь -->
+    <p>Checkbox - Погоджуюсь</p>
+    <div class="form-field">
+      <input type="checkbox" name="policy" id="policy" required>
+      <label for="policy">Соглашаюсь на всё за еду</label>
+    </div>
+
+
+    <button type="submit">Оставить заявку</button>
     </form>
 
 

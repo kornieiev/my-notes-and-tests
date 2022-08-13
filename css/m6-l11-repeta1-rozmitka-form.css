@@ -1,0 +1,70 @@
+* {
+    margin-left: 10px;
+}
+p {
+  padding: 5px;
+  background-color: rgb(247, 252, 180);
+}
+textarea {
+  resize: none;
+}
+form {
+  width: 600px;
+  outline: 1px solid tomato;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px;
+}
+.form-field {
+  outline: 1px solid green;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+}
+.form-field input {
+  margin: 0;
+  padding: 10px 15px;
+  border: 2px solid rgb(0, 255, 106);
+  font-style: italic;
+  font-size: 20px;
+  text-align: right;
+}
+.form-field input::placeholder {
+  color: rgb(255, 20, 71);
+}
+.form-field label {
+  margin-bottom: 5px;
+}
+
+.group {
+  margin-bottom: 20px;
+
+}
+.group-title {
+  margin-left: 0;
+  margin-bottom: 10px;
+}
+
+.experiance-options,
+.topic-options {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+.topic-options input[type="checkbox"] {
+  width: 40px;
+  height: 40px;
+}
+.topic-options label {
+  font-size: 20px;
+  margin-left: 10px;
+}
+
+.form .date {
+  border-color: red;
+  border-width: 2px;
+  border-radius: 5px;
+  padding: 20px 30px;
+  font-size: 20px;
+  color: green;
+}
