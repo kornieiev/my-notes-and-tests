@@ -20,14 +20,15 @@ form {
   margin-bottom: 20px;
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 .form-field input {
   margin: 0;
   padding: 10px 15px;
-  border: 2px solid rgb(0, 255, 106);
+  border: 2px solid rgb(208, 255, 0);
   font-style: italic;
   font-size: 20px;
-  text-align: right;
+  /* text-align: right; */
 }
 .form-field input::placeholder {
   color: rgb(255, 20, 71);
@@ -67,4 +68,39 @@ form {
   padding: 20px 30px;
   font-size: 20px;
   color: green;
+}
+
+.comment {
+  padding: 10px;
+}
+
+.form-label {
+  position: absolute;
+  top: 50%;
+  left: 30px;
+  transform: translateY(-50%);
+  background-color: aqua;
+  transition: transform 250ms linear;
+}
+.form-input {
+  width: 100%;
+  margin: 0;
+  padding: 10px 20px;
+  font: inherit;
+  border-radius: 3px;
+  border: 1px solid salmon;
+}
+
+/*  */
+/* оформление фокуса на label при активном input. В таком случае в HTML необходимо сначала поставить input, а потом label. Чот бы класс читался так: при состоянии focus элемента input будет выбран элемент label */
+/* что бы потом поменять очередность отображения .form-field задаем position:relative а .form-label задаем position:absolut */
+.form-input:focus + .form-label,
+.form-input:not(:placeholder-shown) + .form-label {
+  transform: translateY(-43px);
+}
+/* .form-input:not(:placeholder-shown) + .form-label ОЗНАЧАЄ: вибрати form-label, коли він іде за form-input, коли він не показує (not) placeholder-shown (не показує плейсхолдер) */
+/*  */
+
+.form-input:placeholder-shown {
+background-color: red;
 }

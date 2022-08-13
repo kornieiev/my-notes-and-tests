@@ -21,22 +21,22 @@
     <!-- Вводимо імя, номер телефону і пошту -->
     <p>Вводимо імя, номер телефону і пошту</p>
 
-    <form class="js-speaker-form">
+    <form class="form js-speaker-form">
 
       <div class="form-field">
-        <label for="user-name">Ім'я</label>
-        <input type="text" name="user-name" id="user-name" autofocus autocomplete="on" placeholder="Иванов Иван">
+        <input type="text" name="user-name" id="user-name" autofocus autocomplete="on" placeholder="Иванов Иван" class="form-input"> 
+        <label for="user-name" class="form-label">Ім'я</label>
       </div>
 <!-- name="user-name" - ім'я змінної, яке піде на сервер. використовується для звязки з бекендом -->
 <!-- for="user-name в <label> зв'язує id="user-name" в <input> для того щоб працював функціонал кліку по <label> щоб спрацьовував фокус на <input> -->
       <div class="form-field">
-        <label for="tel">Телефон</label>
-      <input type="tel" name="tel" id="tel">
+      <input type="tel" name="tel" id="tel" class="form-input" placeholder="+38067111111">
+      <label for="tel" class="form-label">Телефон</label>
 
       </div>
       <div class="form-field">
-        <label for="email">Пошта</label>
-      <input type="email" name="email" id="email">
+      <input type="email" name="email" id="email" class="form-input" placeholder="ivanov@mail.com">
+      <label for="email" class="form-label">Пошта</label>
       </div>
 
 <!-- ЧЕКБОКС -->
@@ -93,11 +93,11 @@
     <p>Time-Date</p>
 
     <div class="form-field">    
-      <!-- <label for="time">Время</label>
+      <label for="time">Время</label>
       <input
       type="time"
       name="time"
-      id="time"> -->
+      id="time">
       <label for="date">Дата</label>
       <input 
         type="datetime-local" 
@@ -105,6 +105,7 @@
         id="date" 
         min="2022-08-13T10:00"
         max="2022-08-17T17:00"
+        class="date"
       />
     </div>
     
@@ -119,9 +120,9 @@
 <!-- Оставить комментарий -->
     <p>Оставить комментарий</p>
 
-    <div class="formfield">
+    <div class="form-field">
     <label for="comment">Оставьте комментарий</label>
-    <textarea name="comment" id="comment" cols="" rows="8"></textarea>
+    <textarea name="comment" id="comment" cols="" rows="8" placeholder="Уточните детали заказа" class="comment"></textarea>
   </div>
 
 <!-- Checkbox - Погоджуюсь -->
@@ -134,14 +135,6 @@
 
     <button type="submit">Оставить заявку</button>
     </form>
-
-
-
-
-
-
-
-
 
     <script>
         (() => {
