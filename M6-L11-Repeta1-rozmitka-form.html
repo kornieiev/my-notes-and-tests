@@ -26,18 +26,25 @@
       <div class="form-field">
         <input type="text" name="user-name" id="user-name" autofocus autocomplete="on" placeholder="Иванов Иван" class="form-input"> 
         <label for="user-name" class="form-label">Ім'я</label>
+        <span class="icon"></span>
       </div>
 <!-- name="user-name" - ім'я змінної, яке піде на сервер. використовується для звязки з бекендом -->
 <!-- for="user-name в <label> зв'язує id="user-name" в <input> для того щоб працював функціонал кліку по <label> щоб спрацьовував фокус на <input> -->
       <div class="form-field">
       <input type="tel" name="tel" id="tel" class="form-input" placeholder="+38067111111">
       <label for="tel" class="form-label">Телефон</label>
+      <span class="icon"></span>
+      </div>
 
-      </div>
       <div class="form-field">
-      <input type="email" name="email" id="email" class="form-input" placeholder="ivanov@mail.com">
+      <input type="email" name="email" id="email" class="form-input" placeholder=" ">
       <label for="email" class="form-label">Пошта</label>
+      <span class="icon"></span>
       </div>
+      <a href="https://youtu.be/wahf3ZcDxV4?t=2913">современный метод стилизации иконки:</a>
+      <p>.form-field:focus-within > .icon {<br>background-color: yellow;<br>}<br>(когда внутри элемента form-field появляется фокус на input (:focus-within), то стилизируется .icon)</p>
+      <a href="https://youtu.be/wahf3ZcDxV4?t=3358">как избавится от for в label и id в input></a>
+      <p>input вкладывается в label</p>
 
 <!-- ЧЕКБОКС -->
     <p>ЧЕКБОКС</p>
@@ -47,21 +54,31 @@
 
       <ul class="topic-options">
       <li>
-        <input type="checkbox" name="group-checkbox" value="html" id="html">
-        <label for="html">HTML</label>
+        <label class="label-checkbox">
+        <input class="input-checkbox" type="checkbox" name="group-checkbox" value="html">
+        <span class="iconn"></span>
+        HTML
+        </label>
       </li>
 
       <li>
-        <input type="checkbox" name="group-checkbox" value="css" id="css">
-        <label for="css">CSS</label>
+        <label class="label-checkbox">
+        <input class="input-checkbox" type="checkbox" name="group-checkbox" value="css">
+        <span class="iconn"></span>
+        CSS
+      </label>
       </li>
 
       <li>
-        <input type="checkbox" name="group-checkbox" value="js" id="js">
-        <label for="js">JavaScript</label>
+        <label class="label-checkbox">
+        <input class="input-checkbox" type="checkbox" name="group-checkbox" value="js">
+        <span class="iconn"></span>
+        JavaScript
+      </label>
       </li>
       <!-- для групи чекбоксів використовується однакова назва в name. Напр. "group-checkbox" -->
     </ul>
+    <a href="https://youtu.be/wahf3ZcDxV4?t=5992">анимация label</a>
     </div>
 
 
